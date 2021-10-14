@@ -25,6 +25,34 @@
 /* Begin PBXFileReference section */
 		5681391F2717D40900E064B0 /* eigen-sandbox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "eigen-sandbox"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568139222717D40900E064B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		568139292717D9F500E064B0 /* ci */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci; sourceTree = "<group>"; };
+		5681392A2717D9F500E064B0 /* signature_of_eigen3_matrix_library */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = signature_of_eigen3_matrix_library; sourceTree = "<group>"; };
+		5681392B2717D9F500E064B0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5681392C2717D9F500E064B0 /* COPYING.README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.README; sourceTree = "<group>"; };
+		5681392D2717D9F500E064B0 /* bench */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bench; sourceTree = "<group>"; };
+		5681392E2717D9F500E064B0 /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
+		5681392F2717D9F500E064B0 /* CTestConfig.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CTestConfig.cmake; sourceTree = "<group>"; };
+		568139302717D9F500E064B0 /* COPYING.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.LGPL; sourceTree = "<group>"; };
+		568139312717D9F500E064B0 /* blas */ = {isa = PBXFileReference; lastKnownFileType = folder; path = blas; sourceTree = "<group>"; };
+		568139322717D9F500E064B0 /* demos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = demos; sourceTree = "<group>"; };
+		568139332717D9F500E064B0 /* COPYING.APACHE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.APACHE; sourceTree = "<group>"; };
+		568139342717D9F500E064B0 /* COPYING.MINPACK */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.MINPACK; sourceTree = "<group>"; };
+		568139352717D9F500E064B0 /* Eigen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eigen; sourceTree = "<group>"; };
+		568139362717D9F500E064B0 /* failtest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = failtest; sourceTree = "<group>"; };
+		568139372717D9F500E064B0 /* lapack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lapack; sourceTree = "<group>"; };
+		568139382717D9F500E064B0 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
+		568139392717D9F500E064B0 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
+		5681393A2717D9F500E064B0 /* cmake */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmake; sourceTree = "<group>"; };
+		5681393B2717D9F500E064B0 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		5681393C2717D9F500E064B0 /* COPYING.BSD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.BSD; sourceTree = "<group>"; };
+		5681393D2717D9F600E064B0 /* COPYING.GPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.GPL; sourceTree = "<group>"; };
+		5681393E2717D9F600E064B0 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		5681393F2717D9F700E064B0 /* unsupported */ = {isa = PBXFileReference; lastKnownFileType = folder; path = unsupported; sourceTree = "<group>"; };
+		568139402717D9F700E064B0 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		568139412717D9F700E064B0 /* CTestCustom.cmake.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CTestCustom.cmake.in; sourceTree = "<group>"; };
+		568139422717D9F700E064B0 /* eigen3.pc.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eigen3.pc.in; sourceTree = "<group>"; };
+		568139432717D9F700E064B0 /* debug */ = {isa = PBXFileReference; lastKnownFileType = folder; path = debug; sourceTree = "<group>"; };
+		568139442717D9F700E064B0 /* COPYING.MPL2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.MPL2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +85,34 @@
 		568139212717D40900E064B0 /* eigen-sandbox */ = {
 			isa = PBXGroup;
 			children = (
+				5681392D2717D9F500E064B0 /* bench */,
+				568139312717D9F500E064B0 /* blas */,
+				568139392717D9F500E064B0 /* build */,
+				568139292717D9F500E064B0 /* ci */,
+				5681393A2717D9F500E064B0 /* cmake */,
+				568139402717D9F700E064B0 /* CMakeLists.txt */,
+				568139332717D9F500E064B0 /* COPYING.APACHE */,
+				5681393C2717D9F500E064B0 /* COPYING.BSD */,
+				5681393D2717D9F600E064B0 /* COPYING.GPL */,
+				568139302717D9F500E064B0 /* COPYING.LGPL */,
+				568139342717D9F500E064B0 /* COPYING.MINPACK */,
+				568139442717D9F700E064B0 /* COPYING.MPL2 */,
+				5681392C2717D9F500E064B0 /* COPYING.README */,
+				5681392F2717D9F500E064B0 /* CTestConfig.cmake */,
+				568139412717D9F700E064B0 /* CTestCustom.cmake.in */,
+				568139432717D9F700E064B0 /* debug */,
+				568139322717D9F500E064B0 /* demos */,
+				5681393B2717D9F500E064B0 /* doc */,
+				568139352717D9F500E064B0 /* Eigen */,
+				568139422717D9F700E064B0 /* eigen3.pc.in */,
+				568139362717D9F500E064B0 /* failtest */,
+				568139382717D9F500E064B0 /* INSTALL */,
+				568139372717D9F500E064B0 /* lapack */,
+				5681392B2717D9F500E064B0 /* README.md */,
+				5681393E2717D9F600E064B0 /* scripts */,
+				5681392A2717D9F500E064B0 /* signature_of_eigen3_matrix_library */,
+				5681392E2717D9F500E064B0 /* test */,
+				5681393F2717D9F700E064B0 /* unsupported */,
 				568139222717D40900E064B0 /* main.cpp */,
 			);
 			path = "eigen-sandbox";
