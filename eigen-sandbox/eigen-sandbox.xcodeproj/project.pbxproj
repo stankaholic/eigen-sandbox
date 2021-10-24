@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5647C01E271CDE5000240E50 /* NeuralNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5647C01D271CDE5000240E50 /* NeuralNetwork.cpp */; };
 		568139232717D40900E064B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 568139222717D40900E064B0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5647C01B271CDA2800240E50 /* NeuralNetwork.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NeuralNetwork.hpp; sourceTree = "<group>"; };
+		5647C01D271CDE5000240E50 /* NeuralNetwork.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NeuralNetwork.cpp; sourceTree = "<group>"; };
+		5647C020272607FC00240E50 /* ActivationFunction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ActivationFunction.hpp; sourceTree = "<group>"; };
 		5681391F2717D40900E064B0 /* eigen-sandbox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "eigen-sandbox"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568139222717D40900E064B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		568139292717D9F500E064B0 /* ci */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci; sourceTree = "<group>"; };
@@ -66,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5647C01F271CDE8900240E50 /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				5647C01B271CDA2800240E50 /* NeuralNetwork.hpp */,
+				5647C01D271CDE5000240E50 /* NeuralNetwork.cpp */,
+				5647C020272607FC00240E50 /* ActivationFunction.hpp */,
+			);
+			path = NeuralNetwork;
+			sourceTree = "<group>";
+		};
 		568139162717D40900E064B0 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +128,7 @@
 				5681392E2717D9F500E064B0 /* test */,
 				5681393F2717D9F700E064B0 /* unsupported */,
 				568139222717D40900E064B0 /* main.cpp */,
+				5647C01F271CDE8900240E50 /* NeuralNetwork */,
 			);
 			path = "eigen-sandbox";
 			sourceTree = "<group>";
@@ -176,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				568139232717D40900E064B0 /* main.cpp in Sources */,
+				5647C01E271CDE5000240E50 /* NeuralNetwork.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
