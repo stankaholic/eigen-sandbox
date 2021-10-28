@@ -6,7 +6,9 @@
  
 using Eigen::MatrixXd;
 
-void ReadCSV(std::string filename, std::vector<RowVector*>& data)
+typedef std::vector<RowVector*> data_type;
+
+void ReadCSV(std::string filename, data_type& data)
 {
     data.clear();
     std::ifstream file(filename);
@@ -19,10 +21,10 @@ void ReadCSV(std::string filename, std::vector<RowVector*>& data)
     while (getline(ss, word, ',')) {
         parsed_vec.push_back(Scalar(std::stof(&word[0])));
     }
-    uint cols = parsed_vec.size();
+    unsigned long cols = parsed_vec.size();
     data.push_back(new RowVector(cols));
     for (uint i = 0; i < cols; i++) {
-        data.back()->coeffRef(1, i) = parsed_vec[i];
+        data.back()->coeffRef(i) = parsed_vec[i];
     }
 
     // read the file
@@ -43,7 +45,7 @@ void genData(std::string filename)
 {
     std::ofstream file1(filename + "-in");
     std::ofstream file2(filename + "-out");
-    for (uint r = 0; r < 1000; r++) {
+    for (uint r = 0; r < 5; r++) {
         Scalar x = rand() / Scalar(RAND_MAX);
         Scalar y = rand() / Scalar(RAND_MAX);
         file1 << x << ", " << y << std::endl;
@@ -53,12 +55,10 @@ void genData(std::string filename)
     file2.close();
 }
 
-typedef std::vector<RowVector*> data;
-
 int main()
 {
     NeuralNetwork n({ 2, 3, 1 });
-    data in_dat, out_dat;
+    data_type in_dat, out_dat;
     genData("test");
     ReadCSV("test-in", in_dat);
     ReadCSV("test-out", out_dat);
