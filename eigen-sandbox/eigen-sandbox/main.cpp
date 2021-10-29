@@ -3,6 +3,8 @@
 #include <string>
 #include "NeuralNetwork/NeuralNetwork.hpp"
 #include "Eigen/Dense"
+#include <cctype>
+#include <stdlib.h>
  
 using Eigen::MatrixXd;
 
@@ -41,27 +43,106 @@ void ReadCSV(std::string filename, data_type& data)
     }
 }
 
-void genData(std::string filename)
+std::string itos(uint value)
 {
-    std::ofstream file1(filename + "-in");
-    std::ofstream file2(filename + "-out");
-    for (uint r = 0; r < 5; r++) {
-        Scalar x = rand() / Scalar(RAND_MAX);
-        Scalar y = rand() / Scalar(RAND_MAX);
-        file1 << x << ", " << y << std::endl;
-        file2 << 2 * x + 10 + y << std::endl;
+    std::string returnString;
+    while (value)
+    {
+        uint digit = value % 10;
+        std::string::value_type digitString;
+        switch (digit)
+        {
+            case 0:
+                digitString = '0';
+                break;
+            case 1:
+                digitString = '1';
+                break;
+            case 2:
+                digitString = '2';
+                break;
+            case 3:
+                digitString = '3';
+                break;
+            case 4:
+                digitString = '4';
+                break;
+            case 5:
+                digitString = '5';
+                break;
+            case 6:
+                digitString = '6';
+                break;
+            case 7:
+                digitString = '7';
+                break;
+            case 8:
+                digitString = '8';
+                break;
+            case 9:
+                digitString = '9';
+                break;
+            default:
+                digitString = ' ';
+                break;
+        }
+        returnString.insert(returnString.cbegin(), digitString);
+        value /= 10;
     }
+    return returnString;
+}
+
+void genData(std::string filename, uint numberOfLines)
+{
+    std::ofstream file1(filename);
+    std::stringstream line;
+
+    for (uint i = 1; i < 70; ++i)
+    {
+        line << itos(i) << ",";
+    }
+
+    for (uint j = 0; j < numberOfLines; ++j) {
+        file1 << line.str() << std::endl;
+    }
+
     file1.close();
-    file2.close();
+}
+
+uint convertToCSV(std::string filename_in, std::string filename_out)
+{
+    std::ifstream raw_data(filename_in);
+    std::ofstream csv_data(filename_out);
+
+    std::string line;
+    uint numOfLines = 0;
+    bool toggle = false;
+
+    while(getline(raw_data, line, '\n'))
+    {
+        if(isdigit(line[0]))
+        {
+            csv_data << line << ",";
+            toggle = true;
+        }
+        else if (toggle)
+        {
+            csv_data << std::endl;
+            ++numOfLines;
+            toggle = false;
+        }
+    }
+
+    return numOfLines;
 }
 
 int main()
 {
     NeuralNetwork n({ 2, 3, 1 });
     data_type in_dat, out_dat;
-    genData("test");
-    ReadCSV("test-in", in_dat);
-    ReadCSV("test-out", out_dat);
-    n.train(in_dat, out_dat);
+    genData("data-in.csv", convertToCSV("raw_data", "data-out.csv"));
+    ReadCSV("data-in", in_dat);
+    ReadCSV("data-out", out_dat);
+    //n.train(in_dat, out_dat);
     return 0;
 }
