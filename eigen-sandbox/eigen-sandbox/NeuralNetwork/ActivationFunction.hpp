@@ -19,7 +19,7 @@ namespace ActivationFunction {
 
     Scalar activationFunctionDerivative(Scalar x)
     {
-        return 1 - tanhf(x) * tanhf(x);
+        return 1 - (tanhf(x) * tanhf(x));
     }
     // you can use your own code here!}
 }

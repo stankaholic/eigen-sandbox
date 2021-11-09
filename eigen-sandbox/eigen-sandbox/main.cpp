@@ -12,6 +12,10 @@ typedef std::vector<RowVector*> data_type;
 
 void ReadCSV(std::string filename, data_type& data)
 {
+    // **************************
+    // **** NEED TO FIX THIS ****
+    // **************************
+
     data.clear();
     std::ifstream file(filename);
     std::string line, word;
@@ -138,11 +142,11 @@ uint convertToCSV(std::string filename_in, std::string filename_out)
 
 int main()
 {
-    NeuralNetwork n({ 2, 3, 1 });
+    NeuralNetwork n({ 69, 70, 6 });
     data_type in_dat, out_dat;
     genData("data-in.csv", convertToCSV("raw_data", "data-out.csv"));
-    ReadCSV("data-in", in_dat);
-    ReadCSV("data-out", out_dat);
-    //n.train(in_dat, out_dat);
+    ReadCSV("data-in.csv", in_dat);
+    ReadCSV("data-out.csv", out_dat);
+    n.train(in_dat, out_dat);
     return 0;
 }
