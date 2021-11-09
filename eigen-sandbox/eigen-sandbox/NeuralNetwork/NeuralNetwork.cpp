@@ -54,7 +54,7 @@ void NeuralNetwork::propagateForward(RowVector& input)
     // set the input to input layer
     // block returns a part of the given vector or matrix
     // block takes 4 arguments : startRow, startCol, blockRows, blockCols
-    neuronLayers.front()->block(0, 0, 1, neuronLayers.front()->size() - 1) = input;
+    neuronLayers.front()->block(0, 0, 1, neuronLayers.front()->cols() - 1) = input;
  
     // propagate the data forawrd
     for (uint i = 1; i < topology.size(); i++) {
